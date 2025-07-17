@@ -1,103 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tay Smart Picks</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Lexend', sans-serif;
-      background: linear-gradient(to bottom, #000000, #1a1a40);
-      color: #fff;
-      padding: 0;
-    }
-
-    header {
-      background: #0d0d25;
-      text-align: center;
-      padding: 2rem 1rem;
-      border-bottom: 2px solid #4e4eff;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      color: #bd8aff;
-      margin: 0;
-    }
-
-    .heart {
-      color: #ff5ec4;
-      font-size: 1.5rem;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-    }
-
-    .product {
-      background: #1a1a3a;
-      border-radius: 1rem;
-      padding: 1rem;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-      transition: 0.3s ease;
-    }
-
-    .product:hover {
-      transform: scale(1.02);
-    }
-
-    .product img {
-      width: 100%;
-      border-radius: 0.5rem;
-    }
-
-    .product h3 {
-      color: #9bd5ff;
-      font-size: 1.2rem;
-      margin: 0.5rem 0;
-    }
-
-    .product a {
-      color: #a179ff;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #666;
-    }
+    body { margin:0; background:#000; color:#fff; font-family:sans-serif; }
+    header{ text-align:center; padding:2rem; background:#1a1a40; }
+    header h1{ color:#bd8aff; font-size:2.5rem; }
+    .heart{ color:#ff5ec4; }
+    section{ padding:2rem; max-width:900px; margin:auto; }
+    h2{ color:#9bd5ff; border-bottom:1px solid #4e4eff; padding-bottom:0.5rem; margin-bottom:1rem;}
+    .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem;}
+    .card{ background:#1a1a3a; padding:1rem; border-radius:0.8rem;}
+    .card h3{ margin-top:0; color:#a179ff;}
+    .card a{ color:#9bd5ff; text-decoration:none; font-weight:bold;}
+    footer{ text-align:center; padding:1rem; font-size:0.8rem; color:#888;}
   </style>
 </head>
 <body>
   <header>
     <h1>Tay Smart Picks <span class="heart">♥</span></h1>
-    <p>Your emo-aesthetic guide to trending Amazon faves 🖤</p>
+    <p>Your emo‑aesthetic guide to trending finds 🖤</p>
   </header>
 
-  <section class="products">
-    <div class="product">
-      <img src="https://m.media-amazon.com/images/I/61n7N7+0GrL._AC_SY355_.jpg" alt="Ardell Strip Lashes" />
-      <h3>Ardell Naked Lashes</h3>
-      <a href="https://www.amazon.com/Ardell-Strip-Lashes-Naked-1-Pack/dp/B08LQXCBX9?&linkCode=ll1&tag=taysmartpic0e-20" target="_blank">Shop now →</a>
+  <section>
+    <h2>Top Picks</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Ardell Naked Strip Lashes</h3>
+        <a href="https://www.amazon.com/Ardell-Strip-Lashes-Naked-1-Pack/dp/B08LQXCBX9?tag=taysmartpic0e-20" target="_blank">Shop Now →</a>
+      </div>
+      <div class="card">
+        <h3>This Summer Will Be Different</h3>
+        <a href="https://www.amazon.com/This-Summer-Will-Be-Different/dp/0593638883?tag=taysmartpic0e-20" target="_blank">Buy the Book →</a>
+      </div>
     </div>
+  </section>
 
-    <div class="product">
-      <img src="https://m.media-amazon.com/images/I/61zKHeQ9JBL._SL1500_.jpg" alt="This Summer Will Be Different Book" />
-      <h3>This Summer Will Be Different</h3>
-      <a href="https://www.amazon.com/This-Summer-Will-Be-Different/dp/0593638883?&linkCode=ll1&tag=taysmartpic0e-20" target="_blank">Read it →</a>
+  <section>
+    <h2>Shop by Category</h2>
+    <div class="grid">
+      <div class="card"><h3>Beauty & Makeup</h3><a href="#">View Picks →</a></div>
+      <div class="card"><h3>Books</h3><a href="#">View Picks →</a></div>
+      <div class="card"><h3>Room Decor</h3><a href="#">View Picks →</a></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Free Gift Cards & Cashback</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Swagbucks</h3>
+        <a href="https://www.swagbucks.com/p/register?rb=216070403" target="_blank">Sign up & earn</a>
+        <p>Get points by doing surveys, shopping & get 10% of your referrals’ points free!</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Support Tay</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Tip Jar</h3>
+        <a href="#">Buy me a coffee →</a>
+      </div>
+      <div class="card">
+        <h3>Wishlist</h3>
+        <a href="#">Support my shop →</a>
+      </div>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Tay Smart Picks. Affiliate links may earn me a small commission 💸</p>
+    <p>© 2025 Tay Smart Picks. Affiliate links may earn me a small commission.</p>
   </footer>
 </body>
 </html>
