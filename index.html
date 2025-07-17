@@ -1,78 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tay Smart Picks</title>
+  <meta charset="UTF-8">
+  <title>Tay’s Trending Amazon Picks</title>
   <style>
-    body { margin:0; background:#000; color:#fff; font-family:sans-serif; }
-    header{ text-align:center; padding:2rem; background:#1a1a40; }
-    header h1{ color:#bd8aff; font-size:2.5rem; }
-    .heart{ color:#ff5ec4; }
-    section{ padding:2rem; max-width:900px; margin:auto; }
-    h2{ color:#9bd5ff; border-bottom:1px solid #4e4eff; padding-bottom:0.5rem; margin-bottom:1rem;}
-    .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem;}
-    .card{ background:#1a1a3a; padding:1rem; border-radius:0.8rem;}
-    .card h3{ margin-top:0; color:#a179ff;}
-    .card a{ color:#9bd5ff; text-decoration:none; font-weight:bold;}
-    footer{ text-align:center; padding:1rem; font-size:0.8rem; color:#888;}
+    body {
+      background-color: #0e0e1a;
+      color: #ffffff;
+      font-family: 'Arial', sans-serif;
+      padding: 30px;
+    }
+    h1, h2, h3 {
+      text-align: center;
+      color: #c084fc;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    h2 {
+      margin-top: 40px;
+      font-size: 1.5rem;
+    }
+    p.centered {
+      text-align: center;
+      color: #a3a3c2;
+    }
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .filters button {
+      background: #26263a;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .filters button:hover {
+      background: #4b3f72;
+    }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .card {
+      background: #1a1a2e;
+      padding: 15px;
+      border-radius: 10px;
+      width: 250px;
+      box-shadow: 0 0 10px #4b3f72;
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .card a {
+      text-decoration: none;
+      color: #c0c0ff;
+    }
+    .support {
+      margin-top: 50px;
+      padding: 20px;
+      background: #1a1a2e;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #723fd5;
+      text-align: center;
+    }
+    .support a {
+      display: inline-block;
+      background: #c084fc;
+      color: #0e0e1a;
+      padding: 12px 20px;
+      margin: 10px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .card[data-category] {
+      display: none;
+    }
   </style>
+  <script>
+    function filterCategory(category) {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 </head>
 <body>
-  <header>
-    <h1>Tay Smart Picks <span class="heart">♥</span></h1>
-    <p>Your emo‑aesthetic guide to trending finds 🖤</p>
-  </header>
 
-  <section>
-    <h2>Top Picks</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Ardell Naked Strip Lashes</h3>
-        <a href="https://www.amazon.com/Ardell-Strip-Lashes-Naked-1-Pack/dp/B08LQXCBX9?tag=taysmartpic0e-20" target="_blank">Shop Now →</a>
-      </div>
-      <div class="card">
-        <h3>This Summer Will Be Different</h3>
-        <a href="https://www.amazon.com/This-Summer-Will-Be-Different/dp/0593638883?tag=taysmartpic0e-20" target="_blank">Buy the Book →</a>
-      </div>
-    </div>
-  </section>
+  <h1>✨ Tay’s Trending Amazon Picks ✨</h1>
+  <p class="centered">From cute steals to iconic splurges 💅 — shop Tay’s fave finds now</p>
 
-  <section>
-    <h2>Shop by Category</h2>
-    <div class="grid">
-      <div class="card"><h3>Beauty & Makeup</h3><a href="#">View Picks →</a></div>
-      <div class="card"><h3>Books</h3><a href="#">View Picks →</a></div>
-      <div class="card"><h3>Room Decor</h3><a href="#">View Picks →</a></div>
-    </div>
-  </section>
+  <div class="filters">
+    <button onclick="filterCategory('all')">All</button>
+    <button onclick="filterCategory('tech')">Tech 💻</button>
+    <button onclick="filterCategory('beauty')">Beauty 💄</button>
+    <button onclick="filterCategory('home')">Home 🛋</button>
+    <button onclick="filterCategory('fun')">Fun 🎁</button>
+  </div>
 
-  <section>
-    <h2>Free Gift Cards & Cashback</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Swagbucks</h3>
-        <a href="https://www.swagbucks.com/p/register?rb=216070403" target="_blank">Sign up & earn</a>
-        <p>Get points by doing surveys, shopping & get 10% of your referrals’ points free!</p>
-      </div>
-    </div>
-  </section>
+  <div class="grid">
+    <!-- Tech -->
+    <div class="card" data-category="tech"><a href="https://www.amazon.com/dp/B09G3HRMVB?tag=taysmartpic0e-20" target="_blank"><img src="https://m.media-amazon.com/images/I/71q1nCE0tKL._AC_SL1500_.jpg"><h3>Echo Dot (5th Gen)</h3><p>Smart speaker with Alexa</p></a></div>
+    <div class="card" data-category="tech"><a href="https://www.amazon.com/dp/B08N5WRWNW?tag=taysmartpic0e-20" target="_blank"><img src="https://m.media-amazon.com/images/I/71Q9d9kB9mL._AC_SL1500_.jpg"><h3>AirPods Pro</h3><p>Wireless noise-canceling earbuds</p></a></div>
+    <div class="card" data-category="tech"><a href="https://www.amazon.com/dp/B0148NPJ78?tag=taysmartpic0e-20" target="_blank"><img src="https://m.media-amazon.com/images/I/71A9Vo1BatL._AC_SL1500_.jpg"><h3>Logitech K380</h3><p>Compact Bluetooth keyboard</p></a></div>
 
-  <section>
-    <h2>Support Tay</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Tip Jar</h3>
-        <a href="#">Buy me a coffee →</a>
-      </div>
-      <div class="card">
-        <h3>Wishlist</h3>
-        <a href="#">Support my shop →</a>
-      </div>
-    </div>
-  </section>
+    <!-- Beauty -->
+    <div class="card" data-category="beauty"><a href="https://www.amazon.com/dp/B00N1JQ6DW?tag=taysmartpic0e-20" target="_blank"><img src="https://m.media-amazon.com/images/I/61cSHeEqNML._SL1500_.jpg"><h3>Laneige Lip Mask</h3><p>Hydrating overnight lip care</p></a></div>
+    <div class="card" data-category="beauty"><a href="https://www.amazon.com/dp/B07N6ZL8Z1?tag=taysmartpic0e-20" target="_blank"><img src="https://m.media-amazon.com/images/I/61Y2OZ0P6TL._SL1500_.jpg"><h3>CeraVe Cleanser</h3><p>Gentle facial cleanser</p></a></div>
+    <div class="card" data-category="beauty"><a href="https://www.amazon.com/dp/B000F656Y2?tag=taysmartpic0e-20" target="blank"><img src="https://m.media-amazon.com/images/I/61Vc4lR48vL._SL1500.jpg"><h3>Maybelline Mascara</h3><p>Lash Sensational</p></a></div>
 
-  <footer>
-    <p>© 2025 Tay Smart Picks. Affiliate links may earn me a small commission.</p>
-  </footer>
+    <!-- Home -->
+    <div class="card" data-category="home"><a href="https://www.amazon.com/dp/B085J1FV7G?tag=taysmartpic0e-20" target="blank"><img src="https://m.media-amazon.com/images/I/61qHwpv8-hL._SL1000.jpg"><h3>LED Strip Lights</h3><p>Color-changing with remote</p></a></div>
+    <div class="card" data-category="home"><a href="https://www.amazon.com/dp/B08CVTKWN6?tag=taysmartpic0e-20" target="blank"><img src="https://m.media-amazon.com/images/I/71jTLeVZlpL._SL1500.jpg"><h3>Galaxy Projector</h3><p>For dreamy room vibes</p></a></div>
+    <div class="card" data-category="home"><a href="https://www.amazon.com/dp/B07D1B8B38?tag=taysmartpic0e-20" target="blank"><img src="https://m.media-amazon.com/images/I/71gv4dRP0cL._SL1500.jpg"><h3>Skull Candle</h3><p>Gothic aesthetic decor</p></a></div>
+
+    <!-- Fun -->
+    <div class="card" data-category="fun"><a href="https://www.amazon.com/dp/B08G55C4RG?tag=taysmartpic0e-20" target="blank"><img src="https://m.media-amazon.com/images/I/81bgOhr+jjL._SL1500.jpg"><h3>Cat Paw Pens</h3><p>Set of 12 kawaii pens</p></a></div>
+    <div class="card" data-category="fun"><a href="https://www.amazon.com/dp/B0C1TH8K9W?tag=taysmartpic0e-20" target="blank"><img src="https://m.media-amazon.com/images/I/61Ms9rV2SwL._SL1000.jpg"><h3>Emo Bunny Plush</h3><p>Soft stuffed gothic toy</p></a></div>
+    <div class="card" data-category="fun"><a href="https://www.amazon.com/dp/B0B6M7PNM7?tag=taysmartpic0e-20" target="blank"><img src="https://m.media-amazon.com/images/I/71YZhUNkFSL._SL1500.jpg"><h3>Butterfly Stickers</h3><p>500pcs for journaling</p></a></div>
+  </div>
+
+  <div class="support">
+    <h2>💸 Support Tay & Earn Free Gift Cards 💖</h2>
+    <a href="https://www.buymeacoffee.com/invite/Tatym" target="_blank">☕ Buy Me a Coffee</a>
+    <a href="https://www.swagbucks.com/p/register?rb=138228867&cmp=695&cxid=2023-10-03_subid_smartpicks" target="_blank">🎁 Join Swagbucks (Free Vouchers)</a>
+  </div>
+
 </body>
 </html>
